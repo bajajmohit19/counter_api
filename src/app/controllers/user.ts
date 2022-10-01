@@ -43,5 +43,5 @@ export default userCtrl;
 var job = new CronJob('0 0 * * *', function () {
     console.log('Cron job started')
     userCtrl.AutoIncrementCounter();
-}, null, true, 'America/Los_Angeles');
+}, null, true, 'Asia/Kolkata');
 job.start();
