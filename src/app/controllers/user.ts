@@ -34,9 +34,9 @@ let userCtrl = {
         return new Promise(async (resolve) => {
             User.updateMany({}, { $inc: { counter: 1 } }).exec((err, res)=>{
                 if(err) {
-                    resolve({ ...errorObj, message: "Error in incrementing users" })
+                    return resolve({ ...errorObj, message: "Error in incrementing users" })
                 }
-                resolve()
+                return resolve()
             })
         });
     },
