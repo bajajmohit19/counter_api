@@ -7,12 +7,12 @@ export default (app: any) => {
         .post(async (req: Request, res: Response) => {
             let { body } = req;
             let resp = await userCtrl.add({ ...body });
-            res.json(resp);
+            res.send(200).json(resp);
         })
         .get(async (req: Request, res: Response) => {
             const { query }: any = req;
             let resp = await userCtrl.list({ ...query });
-            res.json(resp);
+            res.send(200).json(resp);
         });
     app
         .route("/")
